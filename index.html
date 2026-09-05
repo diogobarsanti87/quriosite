@@ -283,6 +283,7 @@
         .hours {
             font-weight: 600;
             color: var(--text-color);
+	    white-space: nowrap;
         }
         
         /* Barra de Contato Flutuante para Celular */
@@ -328,7 +329,10 @@
             .floating-bar {
                 display: flex;
             }
-            
+	    
+	    .hours {
+                 font-size: 0.9rem; /* menor no celular */
+            }
             /* Dá um espaço no final da página para o conteúdo não ficar sob a barra */
             body {
                 padding-bottom: 70px;
