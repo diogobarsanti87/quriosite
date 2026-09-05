@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Barsanti - Quiropraxista</title>
+
+
+    <!-- Fonte BIRTHSTONE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
+
+    <!-- Fonte Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Ícones do FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0e4b6c;
+            --secondary-color: #17a2b8;
+            --text-color: #333333;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        .birthstone-regular {
+            font-family: "Birthstone", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+        }
+
+        /* Estilização do Mapa Responsivo */
+    .map-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 45%; /* Mantém a proporção do mapa */
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+        /* Ajuste de altura do mapa para telas menores (celular) */
+        @media (max-width: 768px) {
+            .map-container {
+                padding-bottom: 75%;
+            }
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(rgba(14, 75, 108, 0.65), rgba(14, 75, 108, 0.65)), 
+                url('https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            background-attachment: scroll; /* O iOS Safari tem bug com 'fixed', 'scroll' resolve */
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px 80px;
+}
+
+
+        header h1 {
+            color: var(--white);
+            font-size: 6rem;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1eb854;
+            transform: translateY(-3px);
+        }
+
+        /* Seções do Site */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+        }
+
+        /* Apresentação */
+
+       
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Tópicos sobre Quiropraxia */
+        .bg-light {
+            background-color: var(--bg-light);
+            max-width: 100%;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Contato e Localização */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .contact-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            header p { font-size: 1.1rem; }
+        }
+        /* Estilos para a Seção de Horários */
+        .schedule-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .schedule-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-row:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-row:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .day-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hours {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        /* Barra de Contato Flutuante para Celular */
+        .floating-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            display: none; /* Escondido no computador */
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 15px;
+            box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
+            z-index: 9999;
+        }
+
+        .floating-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            margin: 0 5px;
+            border-radius: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .btn-call {
+            background-color: #0e4b6c; /* Cor principal */
+        }
+
+        .btn-wa {
+            background-color: #25D366; /* Verde WhatsApp */
+        }
+
+        /* Exibe a barra apenas em telas de celular e tablet pequeno */
+        @media (max-width: 768px) {
+            .floating-bar {
+                display: flex;
+            }
+            
+            /* Dá um espaço no final da página para o conteúdo não ficar sob a barra */
+            body {
+                padding-bottom: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho / Banner Principal -->
+    <header>
+        <h1 class="birthstone-regular">Barsanti Quiropraxia</h1>
+        <p>Quiropraxista Especialista em Saúde da Coluna e Bem-Estar</p>
+        <a href="https://wa.me/5511984077461" class="btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i> Agende sua Consulta
+        </a>
+    </header>
+
+    <!-- Apresentação -->
+    <section id="sobre">
+        <h2 class="section-title">Sobre o Profissional</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Olá! Sou o <strong>Felipe Barsanti</strong>, quiropraxista dedicado a devolver a qualidade de vida e o bem-estar aos meus pacientes por meio de um atendimento humanizado e focado na causa da dor.</p>
+                <p>A Quiropraxia atua no diagnóstico, tratamento e prevenção de condições do sistema neuromusculoesquelético, corrigindo desalinhamentos da coluna vertebral para permitir que o corpo funcione no seu máximo potencial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- O que é / Benefícios da Quiropraxia -->
+    <div class="bg-light">
+        <section id="quiropraxia">
+            <h2 class="section-title">Como a Quiropraxia pode ajudar?</h2>
+            <div class="topics-grid">
+                
+                <div class="card">
+                    <i class="fas fa-child-reaching"></i>
+                    <h3>Alívio de Dores</h3>
+                    <p>Tratamento eficaz para dores nas costas, pescoço, hérnia de disco e dores ciáticas sem uso de remédios.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-align-center"></i>
+                    <h3>Correção Postural</h3>
+                    <p>Melhora o alinhamento corporal, reduzindo tensões musculares provocadas pelo dia a dia e más posturas.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Enxaquecas e Dores de Cabeça</h3>
+                    <p>Redução da frequência e intensidade de dores de cabeça causadas por tensão cervical e estresse.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-running"></i>
+                    <h3>Mobilidade e Desempenho</h3>
+                    <p>Aumenta a amplitude de movimento das articulações e otimiza o desempenho em atividades físicas.</p>
+                </div>
+
+                <!-- Novo Tópico 1 -->
+                <div class="card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Prevenção de Lesões</h3>
+                    <p>Manutenção periódica para evitar o desgaste precoce de articulações e o surgimento de novas dores no futuro.</p>
+                </div>
+
+                <!-- Novo Tópico 2 -->
+                <div class="card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Redução do Estresse</h3>
+                    <p>Ao aliviar a tensão muscular e articular, o corpo relaxa, promovendo maior sensação de bem-estar geral.</p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+<!-- Seção de Horários de Atendimento -->
+<section id="horarios">
+    <h2 class="section-title">Horários de Atendimento</h2>
+    <div class="schedule-container">
+        
+        <div class="schedule-row">
+            <span class="day-name"><i class="far fa-clock"></i> Segunda-feira</span>
+            <span class="hours">16:00 às 19:00</span>
+        </div>
+
+        <div class="schedule-row">
+            <span class="day-name"><i class="far fa-clock"></i> Terça-feira</span>
+            <span class="hours">09:00 às 12:00 | 16:00 às 19:00</span>
+        </div>
+
+        <div class="schedule-row">
+            <span class="day-name"><i class="far fa-clock"></i> Quarta-feira</span>
+            <span class="hours">16:00 às 19:00</span>
+        </div>
+
+        <div class="schedule-row">
+            <span class="day-name"><i class="far fa-clock"></i> Quinta-feira</span>
+            <span class="hours">09:00 às 12:00 | 16:00 às 19:00</span>
+        </div>
+
+        <div class="schedule-row">
+            <span class="day-name"><i class="far fa-clock"></i> Sexta-feira</span>
+            <span class="hours">09:00 às 12:00</span>
+        </div>
+
+        <div class="schedule-row">
+            <span class="day-name"><i class="far fa-clock"></i> Sábado</span>
+            <span class="hours">09:00 às 12:00</span>
+        </div>
+
+    </div>
+</section>
+<!-- Seção Localização / Mapa -->
+<div class="bg-light">
+    <section id="localizacao">
+        <h2 class="section-title">Nossa Localização</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d914.1065479399997!2d-48.04775278039838!3d-23.58904344867379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5cd000a1fce9f%3A0x27f757ec33333967!2sLarizzate%20Boulevard%20%26%20Offices!5e0!3m2!1spt-BR!2sbr!4v1786752585035!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </section>
+</div>
+
+    <!-- Contato e Redes Sociais -->
+    <section id="contato">
+        <h2 class="section-title">Contato e Atendimento</h2>
+        <div class="contact-info">
+            
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Telefone / WhatsApp</h3>
+                <p>(11) 98407-7461</p>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Endereço</h3>
+                <p>Rua Aristides Lobo, 224 - Sala 1004 <br> CEP 18200-185 <br>Larizzate Office, <br>Centro - Itapetininga-SP</p>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-share-alt"></i>
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/felipebarsanti?utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/18Hk5V5xpS/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
+                    
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Felipe Barsanti - Quiropraxia. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Barra Flutuante de Contato Mobile -->
+    <div class="floating-bar">
+        <!-- Botão de Ligação Telefônica Directa -->
+        <a href="tel:+551198407461" class="floating-btn btn-call">
+            <i class="fas fa-phone-alt"></i> Ligar
+        </a>
+        
+        <!-- Botão de Mensagem WhatsApp -->
+        <a href="https://wa.me/551198407461?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" class="floating-btn btn-wa" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
+</body>
+</html>
