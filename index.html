@@ -246,6 +246,14 @@
             header h1 { font-size: 2.2rem; }
             header p { font-size: 1.1rem; }
         }
+
+
+	@media (max-width: 768px) {
+  		.break-mobile {
+    		display: block; /* força quebra no celular */
+  		}
+}
+
         /* Estilos para a Seção de Horários */
         .schedule-container {
             max-width: 600px;
@@ -422,7 +430,12 @@
 
         <div class="schedule-row">
             <span class="day-name"><i class="far fa-clock"></i> Terça-feira</span>
-            <span class="hours">09:00 às 12:00 | 16:00 às 19:00</span>
+            <span class="hours">
+  		<span class="hours">09:00 às 12:00 <span class="break-mobile"> 16:00 às 19:00</span>
+	</span>
+
+
+
         </div>
 
         <div class="schedule-row">
@@ -432,7 +445,9 @@
 
         <div class="schedule-row">
             <span class="day-name"><i class="far fa-clock"></i> Quinta-feira</span>
-            <span class="hours">09:00 às 12:00 | 16:00 às 19:00</span>
+            <span class="hours">09:00 às 12:00 <span class="break-mobile"> 16:00 às 19:00</span>
+	</span>
+
         </div>
 
         <div class="schedule-row">
